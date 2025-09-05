@@ -1,9 +1,9 @@
 // app/page.tsx
-import Link from 'next/link'
+import Link from "next/link"
 import Image from "next/image"
-import { IoLogoGithub, IoLogoLinkedin, IoLogoTwitter } from 'react-icons/io5'
-import ParticleBackground from '../components/particlebackground.tsx'
-import NavBar from '../components/navigation.tsx'
+import { IoLogoGithub, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5"
+import ParticleBackground from "../components/particlebackground"
+import NavBar from "../components/navigation"
 
 export default function Home() {
   return (
