@@ -60,7 +60,7 @@ export default function Resume() {
               <h3 className="text-xl font-semibold text-purple-500">Sprout Mortgage</h3>
               <p className="text-gray-300 text-sm">Feb 2022 – July 2022</p>
               <p className="text-gray-200">
-                IT Support: Assisted employees with basic IT support, password resets, and troubleshooting office software such as the Office365 stack and Encompass.
+                Assisted employees with basic IT support, password resets, and troubleshooting office software such as the Office365 stack and Encompass.
               </p>
             </div>
 
@@ -68,7 +68,7 @@ export default function Resume() {
               <h3 className="text-xl font-semibold text-purple-500">JNC Management</h3>
               <p className="text-gray-300 text-sm">2019 to 2021</p>
               <p className="text-gray-200">
-                Worked as a sales representative in the Simi Valley and Topanga area's, and managed the Northridge location.
+               Operated as a sales representative in the Simi Valley and Topanga areas, and managed the Northridge location.
               </p>
             </div>
 
