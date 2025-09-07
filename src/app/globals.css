@@ -19,8 +19,47 @@
   }
 }
 
+/* Generic glow for headings – reduced intensity */
+@keyframes textGlow {
+  0% { text-shadow: 0 0 2px currentColor, 0 0 4px currentColor, 0 0 6px currentColor; }
+  50% { text-shadow: 0 0 4px currentColor, 0 0 6px currentColor, 0 0 8px currentColor; }
+  100% { text-shadow: 0 0 2px currentColor, 0 0 4px currentColor, 0 0 6px currentColor; }
+}
+
+.glow-text {
+  animation: textGlow 2.5s ease-in-out infinite;
+}
+
+/* McDonald's exclusive glow – reduced intensity */
+@keyframes mcdGlow {
+  0% { text-shadow: 0 0 2px #ff0000, 0 0 4px #ff6600, 0 0 6px #ffff00; }
+  50% { text-shadow: 0 0 4px #ff6600, 0 0 6px #ffff00, 0 0 8px #ff0000; }
+  100% { text-shadow: 0 0 2px #ffff00, 0 0 4px #ff0000, 0 0 6px #ff6600; }
+}
+
+.glow-mcd {
+  animation: mcdGlow 2.5s ease-in-out infinite;
+}
+
+/* Rainbow/white glow combo for main header – reduced intensity */
+@keyframes textColorCycle {
+  0% { color: #34d399; } /* green */
+  33% { color: #3b82f6; } /* blue */
+  66% { color: #a855f7; } /* purple */
+  100% { color: #34d399; }
+}
+
+.glow-white {
+  text-shadow: 0 0 2px #ffffff, 0 0 4px #ffffff, 0 0 6px #ffffff;
+  animation: textColorCycle 6s ease-in-out infinite;
+}
+
+/* Maintain stacking for background & content */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
+
