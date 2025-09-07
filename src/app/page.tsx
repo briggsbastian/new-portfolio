@@ -1,4 +1,3 @@
-// app/page.tsx
 import Link from "next/link"
 import Image from "next/image"
 import { IoLogoGithub, IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5"
@@ -7,7 +6,7 @@ import NavBar from "../components/navigation"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
+    <div className="min-h-screen flex items-center justify-center p-8">
       <ParticleBackground />
       <NavBar />
 

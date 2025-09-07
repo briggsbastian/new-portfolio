@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
+/* Base Colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
+/* Tailwind Theme Variables */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,55 +14,52 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Light Mode Override */
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
-/* Main header color cycling glow */
-@keyframes textColorCycle {
-  0% { color: #34d399; }
-  33% { color: #3b82f6; }
-  66% { color: #a855f7; }
-  100% { color: #34d399; }
+/* Glow Animations */
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 4px #22c55e, 0 0 8px #3b82f6, 0 0 12px #9333ea; }
+  50% { text-shadow: 0 0 8px #3b82f6, 0 0 12px #9333ea, 0 0 16px #22c55e; }
+  100% { text-shadow: 0 0 4px #22c55e, 0 0 8px #3b82f6, 0 0 12px #9333ea; }
 }
+.hover\:animate-glowPulse:hover { animation: glowPulse 3s ease-in-out infinite; }
 
-.glow-white {
-  text-shadow: 0 0 2px #ffffff, 0 0 4px #ffffff, 0 0 6px #ffffff;
-  animation: textColorCycle 6s ease-in-out infinite;
+/* Box Glow on Hover */
+@keyframes boxGlow {
+  0% { box-shadow: 0 0 6px rgba(34,197,94,0.3), 0 0 12px rgba(59,130,246,0.3); }
+  50% { box-shadow: 0 0 12px rgba(59,130,246,0.3), 0 0 18px rgba(147,51,234,0.3); }
+  100% { box-shadow: 0 0 6px rgba(34,197,94,0.3), 0 0 12px rgba(59,130,246,0.3); }
 }
+.hover\:animate-boxGlow:hover { animation: boxGlow 2.5s ease-in-out infinite; }
 
-/* Hover lift + shadow for cards */
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
-}
-
-/* Smooth transitions */
-.transition-smooth {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Fade-in on scroll */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Body styling */
+/* Body */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
+}
+
+/* Headings Glow & Hover Lift */
+h1, h2, h3 {
+  transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+h1:hover, h2:hover, h3:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Utility Classes */
+.glow { animation: glowPulse 3s ease-in-out infinite; }
+.glow-box {
+  transition: transform 0.3s ease-in-out;
+}
+.glow-box:hover {
+  transform: translateY(-2px) scale(1.02);
+  animation: boxGlow 2.5s ease-in-out infinite;
 }
 
