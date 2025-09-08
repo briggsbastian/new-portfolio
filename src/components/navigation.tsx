@@ -20,6 +20,7 @@ export default function Navigation({ className }: NavigationProps) {
           <div className="hidden md:flex space-x-6">
             <Link href="/resume" className="text-white hover:text-indigo-400 transition-colors">Resume</Link>
             <Link href="/saint" className="text-white hover:text-indigo-400 transition-colors">Saint the Cat</Link>
+            <Link href="/projects" className="text-white hover:text-indigo-400 transition-colors">Projects</Link>
           </div>
 
           <button className="md:hidden text-white hover:text-indigo-400" onClick={() => setIsOpen(!isOpen)}>
@@ -32,6 +33,7 @@ export default function Navigation({ className }: NavigationProps) {
         <div className="md:hidden bg-black/90 backdrop-blur-sm px-4 pb-4 space-y-2">
           <Link href="/resume" className="block text-white hover:text-indigo-400" onClick={() => setIsOpen(false)}>Resume</Link>
           <Link href="/saint" className="block text-white hover:text-indigo-400" onClick={() => setIsOpen(false)}>Saint the Cat</Link>
+          <Link href="/projects" className="block text-white hover:text-indigo-400" onClick={() => setIsOpen(false)}>Projects</Link>
         </div>
       )}
     </nav>
